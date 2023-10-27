@@ -3,17 +3,13 @@
 <head>
 	<meta charset="utf-8">
 	<title>Contador de caracteres</title>
+	<link rel="stylesheet" href="estilos.css">
 </head>
 <body>	
-	<textarea id="content" placeholder="Inserte caracteres"></textarea>
-	<p>Número de caracteres: <span id="counter"></span></p>
-
-	<script type="text/javascript">
-		function count(){
-			document.getElementById("counter").textContent = document.getElementById("content").value.length;
-		}
-		
-		document.getElementById("content").addEventListener("input", count);
-	</script>
+	<textarea id="caracteres" placeholder="Inserte caracteres"></textarea>
+	<p class="parrafo2">Número de caracteres: </p>
+	<p id="cantidad" class="parrafo">0</p>
+	<script src="operacion.js"></script>
+	<a href="../index.html" class="boton">Regresar</a>
 </body>
 </html>
