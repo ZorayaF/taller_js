@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buscador de Texto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        input {
+            padding: 5px;
+        }
+        #resultado {
+            font-size: 18px;
+            text-align: left;
+        }
+        .highlight {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Buscador de Texto</h1>
+    <label for="texto">Texto:</label>
+    <textarea id="texto" placeholder="Ingresa un texto"></textarea><br>
+    <label for="busqueda">Texto a buscar:</label>
+    <input type="text" id="busqueda" placeholder="Ingresa el texto a buscar"><br>
+    <button onclick="buscarTexto()">Buscar</button>
+    <div id="resultado"></div>
+
+    <script>
+        function buscarTexto() {
+            const texto = document.getElementById("texto").value;
+            const busqueda = document.getElementById("busqueda").value;
+            const resultado = document.getElementById("resultado");
+
+            if (texto && busqueda) {
+                const regex = new RegExp(busqueda, 'g');
+                const textoResaltado = texto.replace(regex, match => `<span class="highlight">${match}</span>`);
+                resultado.innerHTML = textoResaltado;
+            } else {
+                resultado.textContent = "Por favor, ingrese un texto y un texto a buscar.";
+            }
+        }
+    </script>
+</body>
+</html>

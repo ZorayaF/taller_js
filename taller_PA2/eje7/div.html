@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificador de Divisibilidad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        input {
+            padding: 5px;
+        }
+        #resultado {
+            font-size: 18px;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificador de Divisibilidad</h1>
+    <label for="numeroA">Número a:</label>
+    <input type="number" id="numeroA" placeholder="Ingresa un número entero positivo"><br>
+    <label for="numeroB">Número b:</label>
+    <input type="number" id="numeroB" placeholder="Ingresa otro número entero positivo"><br>
+    <button onclick="verificarDivisibilidad()">Verificar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarDivisibilidad() {
+            const numeroA = parseFloat(document.getElementById("numeroA").value);
+            const numeroB = parseFloat(document.getElementById("numeroB").value);
+            const resultado = document.getElementById("resultado");
+
+            if (isNaN(numeroA) || isNaN(numeroB) || !Number.isInteger(numeroA) || !Number.isInteger(numeroB) || numeroA <= 0 || numeroB <= 0) {
+                resultado.classList.add("error");
+                resultado.textContent = "Por favor, ingrese dos números enteros positivos.";
+            } else if (numeroA % numeroB === 0) {
+                resultado.classList.add("success");
+                resultado.textContent = `El número ${numeroA} es divisible entre el número ${numeroB}.`;
+            } else {
+                resultado.classList.add("error");
+                resultado.textContent = `El número ${numeroA} no es divisible entre el número ${numeroB}.`;
+            }
+        }
+    </script>
+</body>
+</html>

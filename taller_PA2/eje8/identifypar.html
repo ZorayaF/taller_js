@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Identificador de Números Pares e Impares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        input {
+            padding: 5px;
+        }
+        #resultado {
+            font-size: 18px;
+            text-align: left;
+        }
+        .par {
+            color: green;
+        }
+        .impar {
+            color: red;
+        }
+        .error {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h1>Identificador de Números Pares e Impares</h1>
+    <label for="numeros">Lista de números (separados por comas):</label>
+    <input type="text" id="numeros" placeholder="Ingresa números enteros"><br>
+    <button onclick="identificarNumeros()">Identificar</button>
+    <div id="resultado"></div>
+
+    <script>
+        function identificarNumeros() {
+            const numerosInput = document.getElementById("numeros").value;
+            const resultado = document.getElementById("resultado");
+
+            const numeros = numerosInput.split(',').map(Number);
+
+            resultado.innerHTML = '';
+
+            numeros.forEach(numero => {
+                const elementoResultado = document.createElement('div');
+
+                if (isNaN(numero) || !Number.isInteger(numero)) {
+                    elementoResultado.classList.add("error");
+                    elementoResultado.textContent = `${numero} no es un número entero`;
+                } else if (numero % 2 === 0) {
+                    elementoResultado.classList.add("par");
+                    elementoResultado.textContent = `● ${numero} es número par`;
+                } else {
+                    elementoResultado.classList.add("impar");
+                    elementoResultado.textContent = `● ${numero} es número impar`;
+                }
+
+                resultado.appendChild(elementoResultado);
+            });
+        }
+    </script>
+</body>
+</html>
+
