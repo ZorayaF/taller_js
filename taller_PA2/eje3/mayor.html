@@ -3,33 +3,18 @@
 <head>
     <title>Verificar Mayoría de Edad</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilos.css">
+	<link rel="stylesheet" href="../estilosGenerales.css">
 </head>
 <body>
     <h1>Verificar Mayoría de Edad</h1>
-    <label for="nombre">Nombre: </label>
-    <input type="text" id="nombre" placeholder="Ingresa tu nombre">
-    <label for="edad">Edad: </label>
+    <label for="nombre" class="parrafoAuxiliar">Nombre: </label>
+    <input type="text" id="nombre" placeholder="Ingresa tu nombre" >
+    <label for="edad" class="parrafoAuxiliar">Edad: </label>
     <input type="number" id="edad" placeholder="Ingresa tu edad">
-    <button onclick="verificarMayorEdad()">Verificar</button>
-    <p id="resultado"></p>
+    <p id="resultado" class="parrafoRespuesta"></p>
+    <script src="operacion.js"></script>
+    <a href="../index.html" class="boton">Regresar</a>
 
-    <script>
-        function verificarMayorEdad() {
-            const nombreInput = document.getElementById("nombre").value;
-            const edadInput = document.getElementById("edad").value;
-            const resultado = document.getElementById("resultado");
-
-            // Verificar si la edad es mayor o igual a 18.
-            if (edadInput<=0){
-                resultado.textContent = `No es una edad válida!`;
-            }
-
-            else if (edadInput >= 18) {
-                resultado.textContent = `Hola ${nombreInput}, eres mayor de edad!`;
-            } else {
-                resultado.textContent = `Hola ${nombreInput}, eres menor de edad!`;
-            }
-        }
-    </script>
 </body>
 </html>

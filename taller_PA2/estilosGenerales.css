@@ -2,7 +2,7 @@
     font-size: 24px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.parrafo2{
+.parrafoAuxiliar{
     color: #a52a2a;
     font-weight: bold;
 }
@@ -12,3 +12,11 @@
     height: 10px;
     width: 40px;
 }
+.parrafoRespuesta{
+    color: #0000ff;
+    font-size: 20px;
+    border: 2px solid #000000;
+    height: 60px;
+    width: 20%;
+}
+
