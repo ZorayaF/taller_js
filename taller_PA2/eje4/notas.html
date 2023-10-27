@@ -2,68 +2,31 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Calificador de Materias</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-        }
-        input {
-            padding: 5px;
-        }
-        #resultado {
-            font-size: 18px;
-        }
-        .pass {
-            color: green;
-        }
-        .fail {
-            color: red;
-        }
-    </style>
+    <title>Calculadora de promedio de una asignatura</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="../estilosGenerales.css">
 </head>
 <body>
-    <h1>Calificador de Materias</h1>
-    <label for="nombre">Nombre:</label>
+    <h1>Calculadora de promedio de una asignatura</h1>
+
+    <label for="nombre" class="parrafoAuxiliar">Nombre:</label>
     <input type="text" id="nombre" placeholder="Ingresa tu nombre"><br>
-    <label for="materia">Materia:</label>
+
+    <label for="materia" class="parrafoAuxiliar">Materia:</label>
     <input type="text" id="materia" placeholder="Ingresa el nombre de la materia"><br>
-    <label for="nota1">Nota 1:</label>
-    <input type="number" id="nota1" placeholder="Nota 1"><br>
-    <label for="nota2">Nota 2:</label>
+
+    <label for="nota1" class="parrafoAuxiliar">Nota 1:</label>
+    <input type="number" id="nota1" placeholder="Nota 1" ><br>
+
+    <label for="nota2" class="parrafoAuxiliar">Nota 2:</label>
     <input type="number" id="nota2" placeholder="Nota 2"><br>
-    <label for="nota3">Nota 3:</label>
+
+    <label for="nota3" class="parrafoAuxiliar">Nota 3:</label>
     <input type="number" id="nota3" placeholder="Nota 3"><br>
-    <button onclick="calificarMateria()">Calificar</button>
-    <p id="resultado"></p>
 
-    <script>
-        function calificarMateria() {
-            const nombre = document.getElementById("nombre").value;
-            const materia = document.getElementById("materia").value;
-            const nota1 = parseFloat(document.getElementById("nota1").value);
-            const nota2 = parseFloat(document.getElementById("nota2").value);
-            const nota3 = parseFloat(document.getElementById("nota3").value);
+    <p id="resultado" class="resultado"></p>
 
-            if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3)) {
-                alert("Por favor, ingrese notas válidas.");
-                return;
-            }
-
-            const promedio = (nota1 + nota2 + nota3) / 3;
-
-            const resultado = document.getElementById("resultado");
-            resultado.innerHTML = `Promedio de ${nombre}, su nota es ${promedio.toFixed(2)}. `;
-
-            if (promedio >= 3.0) {
-                resultado.classList.add("pass");
-                resultado.innerHTML += `Felicitaciones, pasaste la materia ${materia}.`;
-            } else {
-                resultado.classList.add("fail");
-                resultado.innerHTML += `Lo siento, no pasaste la materia ${materia}.`;
-            }
-        }
-    </script>
+    <script src="operacion.js"></script>
+    <a href="../index.html" class="boton">Regresar</a>
 </body>
 </html>

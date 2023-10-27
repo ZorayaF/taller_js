@@ -5,9 +5,9 @@ function identificarTipoDato() {
     if (valorInput.trim() === "") {
         resultado.textContent = "Aún no has ingresado nada.";
     } else if (!isNaN(valorInput)) {
-        resultado.textContent = "El valor ingresado es un número.";
+        resultado.textContent = "número";
     } else {
-        resultado.textContent = "El valor ingresado es un texto.";
+        resultado.textContent = "texto";
     }
 }
 document.getElementById("valor").addEventListener("input", identificarTipoDato);
