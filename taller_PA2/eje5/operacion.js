@@ -7,9 +7,9 @@ function identificarNumero() {
         resultado.textContent = "Debe ingresar números enteros positivos.";
     } else if (numeroInput % 2 === 0) {
         resultado.classList.add("par");
-        resultado.textContent = `${numeroInput} es un número par.`;
+        resultado.textContent = numeroInput + ' es un número par.';
     } else {
         resultado.classList.add("impar");
-        resultado.textContent = `${numeroInput} es un número impar.`;
+        resultado.textContent = numeroInput + 'es un número impar.';
     }
 }

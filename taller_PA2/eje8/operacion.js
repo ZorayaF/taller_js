@@ -11,13 +11,13 @@ function identificarNumeros() {
 
         if (isNaN(numero) || !Number.isInteger(numero)) {
             elementoResultado.classList.add("error");
-            elementoResultado.textContent = `${numero} no es un número entero`;
+            elementoResultado.textContent = numero + 'no es un número entero';
         } else if (numero % 2 === 0) {
             elementoResultado.classList.add("par");
-            elementoResultado.textContent = `● ${numero} es número par`;
+            elementoResultado.textContent = '●' + numero +  'es número par';
         } else {
             elementoResultado.classList.add("impar");
-            elementoResultado.textContent = `● ${numero} es número impar`;
+            elementoResultado.textContent = '●' + numero + ' es número impar';
         }
 
         resultado.appendChild(elementoResultado);
