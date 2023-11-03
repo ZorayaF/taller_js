@@ -12,5 +12,7 @@ function verificarMayorEdad() {
         resultado.textContent = 'Hola ' + nombreInput + ', eres menor de edad!';
     }
 }
+
+
 document.getElementById("edad").addEventListener("input", verificarMayorEdad);
 document.getElementById("nombre").addEventListener("input", verificarMayorEdad);

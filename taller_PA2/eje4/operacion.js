@@ -19,6 +19,8 @@ function calificarMateria() {
     }
     
 }
+
+
 document.getElementById("nota1").addEventListener("input", calificarMateria);
 document.getElementById("nota2").addEventListener("input", calificarMateria);
 document.getElementById("nota3").addEventListener("input", calificarMateria);

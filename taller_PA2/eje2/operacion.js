@@ -10,4 +10,6 @@ function identificarTipoDato() {
         resultado.textContent = "texto";
     }
 }
+
+
 document.getElementById("valor").addEventListener("input", identificarTipoDato);
